@@ -1,0 +1,33 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: pgvector_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: vectordb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres_data:/var/lib/postgresql/data
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama_service
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+
+volumes:
+  postgres_data:
+  ollama_data:
