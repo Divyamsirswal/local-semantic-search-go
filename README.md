@@ -78,8 +78,9 @@ Follow these instructions to get the project running on your local machine.
   ```bash
   curl "http://localhost:8081/search?q=what is a small animal"
 
-Example Response:
+### Example Response:
 
+```
 [
     {
         "content": "A cat is a small, furry mammal.",
@@ -94,9 +95,11 @@ Example Response:
         "similarity": 0.681234567
     }
 ]
+```
 
-Project Structure
-/
+
+## Project Structure
+
 ├── database/               # Database connection, seeding, and query logic
 ├── handlers/               # Echo web handlers for API endpoints
 ├── .env                    # Local environment variables (ignored by Git)
