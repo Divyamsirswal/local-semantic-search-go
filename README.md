@@ -1,5 +1,5 @@
 
-# Go Semantic Search API 🚀
+# Go Semantic Search API
 
 [![Go version](https://img.shields.io/badge/go-1.18%2B-blue.svg)](https://go.dev)
 [![Docker](https://img.shields.io/badge/docker-compose-blue.svg)](https://www.docker.com)
